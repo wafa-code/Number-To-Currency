@@ -7,11 +7,7 @@ public class NumberToCurrency {
     String value = "";
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
     String moneyString = formatter.format(money);
-    if(moneyString.contains("€") || moneyString.contains("$")) {
-      value=moneyString.replace("€","");
-      value=moneyString.replace("$","");
-      value=value+" DZD";
-    }
+    value = "" + moneyString.substring(1)+" DZD";
     return value;
 }  
 
